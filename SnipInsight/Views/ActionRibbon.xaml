@@ -1,0 +1,118 @@
+﻿<!-- Copyright (c) Microsoft Corporation. All rights reserved -->
+<!--  Licensed under the MIT License. -->
+<UserControl x:Class="SnipInsight.Views.ActionRibbon"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ari="clr-namespace:SnipInsight.Controls.Ariadne"
+             xmlns:con="clr-namespace:SnipInsight.Util"
+             xmlns:views="clr-namespace:SnipInsight.Views"
+             mc:Ignorable="d"
+             d:DesignHeight="60" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <con:StringToVisibility x:Key="StringToVisibility" />
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibility" />
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../ResourceDictionaries/Icons.xaml" />
+                <ResourceDictionary Source="../ResourceDictionaries/SnipStyles.xaml" />
+                <ResourceDictionary Source="../ResourceDictionaries/SnipTemplates.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid Height="55"
+          Style="{DynamicResource ActionRibbonGrid}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Button HorizontalAlignment="Left"
+                Style="{DynamicResource ActionRibbonButton}"
+                Template="{DynamicResource ActionButtonTemplate}"
+                Width="155"
+                ToolTip="Original Snip"
+                Command="{Binding RestoreImageCommand}"
+                AutomationProperties.Name="RevertToOrigionalSnip"
+                Visibility="{Binding RestoreImageUrl, Converter={StaticResource StringToVisibility}}">
+            <StackPanel Orientation="Horizontal">
+                <ari:AriIcon Template="{StaticResource Back_32_Icon}" />
+                <TextBlock Margin="16,10">
+                    Original Snip
+                </TextBlock>
+            </StackPanel>
+        </Button>
+        <StackPanel Grid.Column="0"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right">
+            <Button Style="{DynamicResource ActionRibbonButton}"
+                    Template="{DynamicResource ActionButtonTemplate}"
+                    ToolTip="Copy"
+                    Command="{Binding CopyImageCommand}"
+                    AutomationProperties.Name="CopyImage">
+                <ari:AriIcon Template="{StaticResource Copy_20_Icon}"/>
+            </Button>
+            <Button Style="{DynamicResource ActionRibbonButton}"
+                    ToolTip="Save"
+                    Command="{Binding SaveImageCommand}"
+                    Template="{DynamicResource ActionButtonTemplate}"
+                    AutomationProperties.Name="SaveImage">
+                <ari:AriIcon Template="{StaticResource Save_20_Icon}"/>
+            </Button>
+            <Menu Background="Transparent"
+                  KeyboardNavigation.DirectionalNavigation="Continue"
+                  IsEnabled="{Binding CanShare, Mode=OneWay}"
+                  HorizontalAlignment="Stretch">
+                <ari:AriIconLabelMenuItem x:Name="ShareMenu"
+                                          ToolTip="Share"
+                                          AutomationProperties.Name="ShareMenu">
+                    <ari:AriIconLabelMenuItem.Icon>
+                        <ari:AriIcon Template="{StaticResource Share_20_Icon}" />
+                    </ari:AriIconLabelMenuItem.Icon>
+                    <ari:AriIconLabelMenuItem
+                                    Label="Email"
+                                    Height="{DynamicResource SmallMenuItemHeight}"
+                                    Padding="{DynamicResource SmallMenuItemPadding}"
+                                    Foreground="{DynamicResource WhiteBrush}"
+                                    Command="{Binding ShareImageEmailCommand}"
+                                    AutomationProperties.Name="ShareEmailButton">
+                        <ari:AriIconLabelMenuItem.Icon>
+                            <ari:AriIcon Template="{StaticResource ShareEmail_20_Icon}" />
+                        </ari:AriIconLabelMenuItem.Icon>
+                    </ari:AriIconLabelMenuItem>
+                    <ari:AriIconLabelMenuItem
+                                    Label="OneNote"
+                                    Height="{DynamicResource SmallMenuItemHeight}"
+                                    Padding="{DynamicResource SmallMenuItemPadding}"
+                                    Foreground="{DynamicResource WhiteBrush}"
+                                    Command="{Binding ShareImageSendToOneNoteCommand}"
+                                    AutomationProperties.Name="ShareOneNoteButton">
+                        <ari:AriIconLabelMenuItem.Icon>
+                            <ari:AriIcon Template="{StaticResource OneNote_20_Icon}" />
+                        </ari:AriIconLabelMenuItem.Icon>
+                    </ari:AriIconLabelMenuItem>
+                </ari:AriIconLabelMenuItem>
+            </Menu>
+        </StackPanel>
+
+        <StackPanel Grid.Column="2"
+                    Orientation="Horizontal">
+            <Button Style="{DynamicResource ActionRibbonButton}"
+                    Template="{DynamicResource ActionButtonTemplate}"
+                    Width="160"
+                    Command="{Binding RefreshAICommand}"
+                    Visibility="{Binding InsightsVisible, Converter={StaticResource BooleanToVisibility}}"
+                    ToolTip="Refresh Insights"
+                    AutomationProperties.Name="RefreshInsights">
+                <StackPanel Orientation="Horizontal">
+                    <ari:AriIcon Template="{StaticResource Refresh_32_Icon}"/>
+                    <TextBlock Margin="11, 10"
+                               Visibility="{Binding InsightsVisible, Converter={StaticResource BooleanToVisibility}}">
+                     Refresh Insights
+                    </TextBlock>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

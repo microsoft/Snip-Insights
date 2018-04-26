@@ -1,0 +1,70 @@
+﻿<!-- Copyright (c) Microsoft Corporation. All rights reserved -->
+<!--  Licensed under the MIT License. -->
+<UserControl x:Class="SnipInsight.Views.TopRibbon"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:views="clr-namespace:SnipInsight.Views"
+             xmlns:ari="clr-namespace:SnipInsight.Controls.Ariadne"
+             mc:Ignorable="d"
+             d:DesignHeight="100" d:DesignWidth="1200">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../ResourceDictionaries/Icons.xaml" />
+                <ResourceDictionary Source="../ResourceDictionaries/AriadneStyles.xaml" />
+                <ResourceDictionary Source="../ResourceDictionaries/SnipStyles.xaml" />
+                <ResourceDictionary Source="../ResourceDictionaries/SnipTemplates.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibility" />
+            <views:InvertBooleanToVisibility x:Key="InvertBooleanToVisibility" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <StackPanel Orientation="Horizontal">
+            <Grid>
+                <Button x:Name="InsightsToggle"
+                        Style="{DynamicResource TopRibbonButton}"
+                        Visibility="Collapsed"
+                        BorderThickness="0"
+                        BorderBrush="Transparent"
+                        IsEnabled="{Binding AIEnable}"
+                        Command="{Binding ToggleEditorCommand}"
+                        AutomationProperties.Name ="Insights"
+                        AutomationProperties.ItemStatus ="{Binding IsEnabled}"
+                        Template="{DynamicResource TopRibbonTemplate}">Insights</Button>
+                <Rectangle Style="{DynamicResource TopRibbonRectangle}"
+                           Visibility="{Binding AIEnable,
+                                        Converter={StaticResource InvertBooleanToVisibility}}"/>
+            </Grid>
+            <Grid>
+                <Button x:Name="LibraryToggle"
+                        Style="{DynamicResource TopRibbonButton}"
+                        IsEnabled="{Binding LibraryEnable}"
+                        Command="{Binding ToggleLibraryCommand}"
+                        AutomationProperties.Name = "Library"
+                        Template="{DynamicResource TopRibbonTemplate}">Library</Button>
+                <Rectangle Style="{DynamicResource TopRibbonRectangle}"
+                           Visibility="{Binding ElementName=LibraryToggle,
+                                    Path=IsEnabled,
+                                    Converter={StaticResource InvertBooleanToVisibility}}"/>
+            </Grid>
+        </StackPanel>
+        <Grid HorizontalAlignment="Right">
+            <ari:AriIconLabelButton x:Name="SettingsButton"
+                                    Label="Settings"
+                                    IsEnabled="{Binding SettingsEnable}"
+                                    Style="{DynamicResource NavbarToggle}"
+                                    Command="{Binding ToggleSettingsCommand}"
+                                    AutomationProperties.Name ="Settings"
+                                    AutomationProperties.ItemStatus ="{Binding IsEnabled}">
+                <ari:AriIcon Template="{StaticResource Settings_Black_32_Icon}" />
+            </ari:AriIconLabelButton>
+            <Rectangle Style="{DynamicResource SettingsRectangle}"
+                       Visibility="{Binding ElementName=SettingsButton,
+                                    Path=IsEnabled,
+                                    Converter={StaticResource InvertBooleanToVisibility}}"/>
+        </Grid>
+    </Grid>
+</UserControl>

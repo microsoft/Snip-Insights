@@ -1,0 +1,115 @@
+﻿<!-- Copyright (c) Microsoft Corporation. All rights reserved -->
+<!--  Licensed under the MIT License. -->
+<UserControl x:Class="SnipInsight.AIServices.AIComponents.AISideNavigation"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ari="clr-namespace:SnipInsight.Controls.Ariadne"
+             xmlns:properties="clr-namespace:SnipInsight.Properties"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="100">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../ResourceDictionaries/Icons.xaml" />
+                <ResourceDictionary Source="../../ResourceDictionaries/AriadneStyles.xaml" />
+                <ResourceDictionary Source="../../ResourceDictionaries/SnipStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <StackPanel Background="{DynamicResource SystemWhite}">
+            <Grid Height="20"/>
+            <Grid>
+                <ari:AriEraseRadioButton x:Name="SuggestedInsightsButton"
+                                         Style="{DynamicResource AIRibbonToggle}"
+                                         IsChecked="{Binding SuggestedInsightsVisible, Mode=TwoWay}"
+                                         ToolTip="{x:Static properties:Resources.Suggested_Insights}"
+                                         ToolTipService.ShowOnDisabled="True"
+                                         AutomationProperties.Name="SuggestInsights">
+                    <ari:AriIcon Template="{DynamicResource Suggested_32_Icon}"/>
+                </ari:AriEraseRadioButton>
+                <Rectangle Style="{DynamicResource SideNavigationRectangle}"
+                           Visibility="{Binding ElementName=SuggestedInsightsButton,
+                                        Path=IsChecked,
+                                        Converter={StaticResource BooleanToVisibility}}"/>
+            </Grid>
+            <Grid>
+                <ari:AriEraseRadioButton x:Name="OCRButton"
+                                          Style="{DynamicResource AIRibbonToggle}"
+                                          IsChecked="{Binding ImageToTextVisible, Mode=TwoWay}"
+                                          Command="{Binding OCRCommand}"
+                                          ToolTip="{x:Static properties:Resources.Image_to_Text}"
+                                          ToolTipService.ShowOnDisabled="True"
+                                          AutomationProperties.Name="ImageToText">
+                    <ari:AriIcon Template="{StaticResource OCR_32_Icon}"/>
+                </ari:AriEraseRadioButton>
+                <Rectangle Style="{DynamicResource SideNavigationRectangle}"
+                           Visibility="{Binding ElementName=OCRButton,
+                                        Path=IsChecked,
+                                        Converter={StaticResource BooleanToVisibility}}"/>
+            </Grid>
+            <Grid>
+                <ari:AriEraseRadioButton x:Name="BingImageSearchButton"
+                                         Style="{DynamicResource AIRibbonToggle}"
+                                         IsChecked="{Binding SimilarImagesVisible, Mode=TwoWay}"
+                                         Command="{Binding ImageSearchCommand}"
+                                         ToolTip="{x:Static properties:Resources.Similar_Images}"
+                                         ToolTipService.ShowOnDisabled="True"
+                                         AutomationProperties.Name="BingImageSearch">
+                    <ari:AriIcon Template="{StaticResource Similar_Images_32_Icon}"/>
+                </ari:AriEraseRadioButton>
+                <Rectangle Style="{DynamicResource SideNavigationRectangle}"
+                           Visibility="{Binding ElementName=BingImageSearchButton,
+                                        Path=IsChecked,
+                                        Converter={StaticResource BooleanToVisibility}}"/>
+            </Grid>
+            <Grid>
+                <ari:AriEraseRadioButton x:Name="BingProductSearchButton"
+                                          Style="{DynamicResource AIRibbonToggle}"
+                                          IsChecked="{Binding ProductSearchVisible, Mode=TwoWay}"
+                                          Command="{Binding ProductSearchCommand}"
+                                          ToolTip="{x:Static properties:Resources.Similar_Products}"
+                                          ToolTipService.ShowOnDisabled="True"
+                                          AutomationProperties.Name="BingProductSearch">
+                    <ari:AriIcon Template="{StaticResource Product_32_Icon}"/>
+                </ari:AriEraseRadioButton>
+                <Rectangle Style="{DynamicResource SideNavigationRectangle}"
+                           Visibility="{Binding ElementName=BingProductSearchButton,
+                                        Path=IsChecked,
+                                        Converter={StaticResource BooleanToVisibility}}"/>
+            </Grid>
+            <Grid>
+                <ari:AriEraseRadioButton x:Name="PeopleSearchButton"
+                                         Style="{DynamicResource AIRibbonToggle}"
+                                         IsChecked="{Binding PeopleSearchVisible, Mode=TwoWay}"
+                                         Command="{Binding PeopleSearchCommand}"
+                                         ToolTip="{x:Static properties:Resources.Celebrity_Information}"
+                                         ToolTipService.ShowOnDisabled="True"
+                                         AutomationProperties.Name="PeopleSearch">
+                    <ari:AriIcon Template="{StaticResource People_32_Icon}"/>
+                </ari:AriEraseRadioButton>
+                <Rectangle Style="{DynamicResource SideNavigationRectangle}"
+                           Visibility="{Binding ElementName=PeopleSearchButton,
+                                        Path=IsChecked,
+                                        Converter={StaticResource BooleanToVisibility}}"/>
+            </Grid>
+            <Grid>
+                <ari:AriEraseRadioButton x:Name="PlaceSearchButton"
+                                         Style="{DynamicResource AIRibbonToggle}"
+                                         IsChecked="{Binding PlaceSearchVisible, Mode=TwoWay}"
+                                         Command="{Binding PlaceSearchCommand}"
+                                         ToolTip="{x:Static properties:Resources.Landmark_Information}"
+                                         ToolTipService.ShowOnDisabled="True"
+                                         AutomationProperties.Name="PlaceSearch">
+                    <ari:AriIcon Template="{StaticResource Place_32_Icon}"/>
+                </ari:AriEraseRadioButton>
+                <Rectangle Style="{DynamicResource SideNavigationRectangle}"
+                           Visibility="{Binding ElementName=PlaceSearchButton,
+                                        Path=IsChecked,
+                                        Converter={StaticResource BooleanToVisibility}}"/>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</UserControl>

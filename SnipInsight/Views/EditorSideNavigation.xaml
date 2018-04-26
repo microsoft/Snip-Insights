@@ -1,0 +1,211 @@
+﻿<!-- Copyright (c) Microsoft Corporation. All rights reserved -->
+<!--  Licensed under the MIT License. -->
+<UserControl x:Class="SnipInsight.Views.EditorSideNavigation"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:SnipInsight.Views"
+             xmlns:ari="clr-namespace:SnipInsight.Controls.Ariadne"
+             xmlns:properties="clr-namespace:SnipInsight.Properties"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="50">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../ResourceDictionaries/Icons.xaml" />
+                <ResourceDictionary Source="../ResourceDictionaries/AriadneStyles.xaml" />
+                <ResourceDictionary Source="../ResourceDictionaries/SnipStyles.xaml" />
+                <ResourceDictionary Source="../ResourceDictionaries/SnipTemplates.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <StackPanel>
+            <Grid Height="20"/>
+            <Grid>
+                <ari:AriEraseRadioButton x:Name="PenToggle" VerticalAlignment="Stretch"
+                                         IsChecked="{Binding PenChecked, Mode=TwoWay}"
+                                         Checked="PenButton_Check"
+                                         Click="PenButton_Click"
+                                         LostKeyboardFocus="PenToggleLostKeyboardFocus"
+                                         ToolTip="{x:Static properties:Resources.Pen_Toggle}"
+                                         AutomationProperties.Name="{Binding RelativeSource={RelativeSource Self},Path= Name}"/>
+                <ari:AriIcon Template="{StaticResource Drawing_Pen_32_Icon}" />
+                    <Popup x:Name="PenPalettePopup"
+                           Placement="Left"
+                           PlacementTarget="{Binding ElementName=PenToggle}"
+                           IsOpen="false"
+                           Focusable="True"
+                           StaysOpen="False">
+                    <Grid x:Name="ToggleContainer"
+                          HorizontalAlignment="Center"
+                          Opacity="1" 
+                          FocusManager.IsFocusScope="True"
+                          Width="302.5"
+                          Height="158">
+                        <Border x:Name="Tool2Border"
+                                BorderThickness="0.5"
+                                BorderBrush="{DynamicResource ThemeDarkGrey}"
+                                Background="{DynamicResource ThemeGreyBrush}"
+                                Style="{DynamicResource ToggleContainerGrid}">
+                            <StackPanel x:Name="ToggleStackContainer"
+                                        VerticalAlignment="Top"
+                                        Orientation="Vertical">
+                                <TextBlock Text="Colors"
+                                           Margin="10,10,10,0"/>
+                                <StackPanel Orientation="Horizontal">
+                                    <ari:AriInkRadioButton x:Name="BlackColorButton"
+                                                           Ink="Black"
+                                                           IsChecked="True"
+                                                           Checked="ColorButton_Checked"
+                                                           AutomationProperties.Name="BlackColorButton"/>
+                                    <ari:AriInkRadioButton x:Name="RedColorButton"
+                                                           Ink="Red"
+                                                           Checked="ColorButton_Checked"
+                                                           AutomationProperties.Name="RedColorButton"/>
+                                    <ari:AriInkRadioButton x:Name="YellowColorButton"
+                                                           Ink="Orange"
+                                                           Checked="ColorButton_Checked"
+                                                           AutomationProperties.Name="OrangeColorButton"/>
+                                    <ari:AriInkRadioButton x:Name="GreenColorButton"
+                                                           Ink="Green"
+                                                           Checked="ColorButton_Checked"
+                                                           AutomationProperties.Name="GreenColorButton"/>
+                                    <ari:AriInkRadioButton x:Name="BlueColorButton"
+                                                           Ink="Blue"
+                                                           Checked="ColorButton_Checked"
+                                                           AutomationProperties.Name="BlueColorButton" />
+                                </StackPanel>
+                                <TextBlock Text="Weight"
+                                           Margin="10,2"/>
+                                <StackPanel Orientation="Horizontal">
+                                    <ari:AriIconLabelMenuItem x:Name="PenSize1Button"
+                                                              Label="Very Fine"
+                                                              IsShy="True"
+                                                              Height="50"
+                                                              Click="PenSizeButton_Click"
+                                                              AutomationProperties.Name="{Binding RelativeSource={RelativeSource Self},Path= Name}">
+                                        <ari:AriIconLabelMenuItem.Icon>
+                                            <Grid Height="32" Width="32">
+                                                <Ellipse x:Name="PenSize1Shape"
+                                                         Fill="#FFCCCCCC"
+                                                         Height="8"
+                                                         Width="8" />
+                                            </Grid>
+                                        </ari:AriIconLabelMenuItem.Icon>
+                                    </ari:AriIconLabelMenuItem>
+                                    <ari:AriIconLabelMenuItem x:Name="PenSize3Button"
+                                                              Label="Fine"
+                                                              IsShy="True"
+                                                              Height="50"
+                                                              Click="PenSizeButton_Click"
+                                                              AutomationProperties.Name="{Binding RelativeSource={RelativeSource Self},Path= Name}">
+                                        <ari:AriIconLabelMenuItem.Icon>
+                                            <Grid Height="32"
+                                                  Width="32">
+                                                <Ellipse x:Name="PenSize3Shape"
+                                                         Fill="#FFCCCCCC"
+                                                         Height="12"
+                                                         Width="12" />
+                                            </Grid>
+                                        </ari:AriIconLabelMenuItem.Icon>
+                                    </ari:AriIconLabelMenuItem>
+                                    <ari:AriIconLabelMenuItem x:Name="PenSize5Button"
+                                                              Label="Medium"
+                                                              IsShy="True"
+                                                              Height="50"
+                                                              Click="PenSizeButton_Click"
+                                                              AutomationProperties.Name="{Binding RelativeSource={RelativeSource Self},Path= Name}">
+                                        <ari:AriIconLabelMenuItem.Icon>
+                                            <Grid Height="32"
+                                                  Width="32">
+                                                <Ellipse x:Name="PenSize5Shape"
+                                                         Fill="#FFCCCCCC"
+                                                         Height="16"
+                                                         Width="16" />
+                                            </Grid>
+                                        </ari:AriIconLabelMenuItem.Icon>
+                                    </ari:AriIconLabelMenuItem>
+
+                                    <ari:AriIconLabelMenuItem x:Name="PenSize9Button"
+                                                              Label="Thick"
+                                                              IsShy="True"
+                                                              Height="50"
+                                                              Click="PenSizeButton_Click"
+                                                              LostKeyboardFocus="PenSizeLostKeyboardFocus"
+                                                              AutomationProperties.Name="{Binding RelativeSource={RelativeSource Self},Path= Name}">
+                                        <ari:AriIconLabelMenuItem.Icon>
+                                            <Grid Height="32"
+                                                  Width="32">
+                                                <Ellipse x:Name="PenSize9Shape"
+                                                         Fill="#FFCCCCCC"
+                                                         Height="20"
+                                                         Width="20" />
+                                            </Grid>
+                                        </ari:AriIconLabelMenuItem.Icon>
+                                    </ari:AriIconLabelMenuItem>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                </Popup>
+                <Rectangle Style="{DynamicResource SideNavigationRectangle}"
+						   Visibility="{Binding ElementName=PenToggle,
+                                        Path=IsChecked,
+                                        Converter={StaticResource BooleanToVisibility}}"/>
+                <ari:AriIcon Template="{StaticResource Expand_Icon}"
+                             HorizontalAlignment="Right"
+                             Margin="3,0"
+                             Visibility="{Binding ElementName=PenToggle,
+                                        Path=IsChecked,
+                                        Converter={StaticResource BooleanToVisibility}}"/>
+            </Grid>
+            <Grid>
+                <ari:AriEraseRadioButton x:Name="HighlighterButton"
+                                         IsChecked="{Binding HighlighterChecked, Mode=TwoWay}"
+                                         Checked="Highlighter_Checked"
+                                         ToolTip ="{x:Static properties:Resources.Highlighter}"
+                                         AutomationProperties.Name="{Binding RelativeSource={RelativeSource Self},Path= Name}" />
+                <ari:AriIcon VerticalAlignment="Center" HorizontalAlignment="Center" Template="{StaticResource Highlight_32_Icon}" />
+                <Rectangle Style="{DynamicResource SideNavigationRectangle}"
+						   Visibility="{Binding ElementName=HighlighterButton,
+                                        Path=IsChecked,
+                                        Converter={StaticResource BooleanToVisibility}}"
+                                        AutomationProperties.Name="{Binding RelativeSource={RelativeSource Self},Path= Name}"/>
+            </Grid>
+            <Grid>
+                <ari:AriEraseRadioButton x:Name="EraserButton"
+										 IsChecked="{Binding EraserChecked, Mode=TwoWay}"
+                                         ToolTip="{x:Static properties:Resources.Eraser}"
+                                         AutomationProperties.Name="{Binding RelativeSource={RelativeSource Self},Path= Name}"/>
+                <ari:AriIcon VerticalAlignment="Center" HorizontalAlignment="Center" Template="{StaticResource Eraser_32_Icon}" />
+                <Rectangle Style="{DynamicResource SideNavigationRectangle}"
+						   Visibility="{Binding ElementName=EraserButton,
+                                        Path=IsChecked,
+                                        Converter={StaticResource BooleanToVisibility}}"/>
+            </Grid>
+            <Grid>
+                <ari:AriEraseRadioButton x:Name="EraseAllButton"
+                                        Command="{Binding EraseAllCommand}"
+                                        ToolTip="{x:Static properties:Resources.Erase_All}"
+                                        AutomationProperties.Name="{Binding RelativeSource={RelativeSource Self},Path= Name}"/>
+                <ari:AriIcon Template="{StaticResource EraseAll_32_Icon}" />
+            </Grid>
+            <Grid>
+                <ari:AriEraseRadioButton x:Name="UndoButton"
+                                        Command="{Binding UndoCommand}"
+                                        ToolTip="{x:Static properties:Resources.Undo}"
+                                        AutomationProperties.Name="{Binding RelativeSource={RelativeSource Self},Path= Name}"/>
+                <ari:AriIcon Template="{StaticResource Undo_32_Icon}" />
+            </Grid>
+            <Grid>
+                <ari:AriEraseRadioButton x:Name="RedoButton"
+                                        Command="{Binding RedoCommand}"
+                                        ToolTip="{x:Static properties:Resources.Redo}"
+                                        AutomationProperties.Name="{Binding RelativeSource={RelativeSource Self},Path= Name}"/>
+                <ari:AriIcon Template="{StaticResource Redo_32_Icon}" />
+            </Grid>
+        </StackPanel>
+    </Grid>
+</UserControl>

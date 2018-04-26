@@ -1,0 +1,77 @@
+﻿<!-- Copyright (c) Microsoft Corporation. All rights reserved -->
+<!--  Licensed under the MIT License. -->
+<UserControl x:Class="SnipInsight.AIServices.AIComponents.InsightsPermissions"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ari="clr-namespace:SnipInsight.Controls.Ariadne"
+             xmlns:local="clr-namespace:SnipInsight.AIServices.AIComponents"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="300"
+             DataContext="{Binding Source={StaticResource Locator}, Path=InsightsPermissionsLoc}"
+             Background="{DynamicResource SystemWhite}"
+             AutomationProperties.Name="InsightsPermissionsPanel">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../ResourceDictionaries/SnipStyles.xaml" />
+                <ResourceDictionary Source="../../ResourceDictionaries/SnipTemplates.xaml" />
+                <ResourceDictionary Source="../../ResourceDictionaries/Icons.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="9*" />
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ari:AriIcon Grid.Row="1"
+                     Grid.Column="1"
+                     Template="{StaticResource FTUXIcon}"/>
+        <Grid Grid.Row="2"
+              Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"
+                               MinHeight="110"/>
+            </Grid.RowDefinitions>
+            <TextBlock Style="{DynamicResource FTUXTextBlock}"/>
+            <StackPanel Grid.Row="2">
+                <TextBlock>
+                    <Hyperlink Command="{Binding Path=OpenLearnMoreInBrowserCommand}"
+                               AutomationProperties.Name="About Cognitive Services">
+                        <TextBlock Style="{DynamicResource FTUXHyperlink}">
+                            About Cognitive Services
+                        </TextBlock>
+                    </Hyperlink>
+                </TextBlock>
+                <TextBlock>
+                    <Hyperlink Command="{Binding Path=OpenPrivatePolicyInBrowserCommand}"
+                               AutomationProperties.Name="Privacy Policy">
+                        <TextBlock Style="{DynamicResource FTUXHyperlink}">
+                            Privacy Policy
+                        </TextBlock>
+                    </Hyperlink>
+                </TextBlock>
+            </StackPanel>
+            <Grid Grid.Row="3">
+                <Button Style="{DynamicResource FTUXButton}"
+                        Template="{StaticResource ExportButton}"
+                        Background="{DynamicResource ThemeColorBrush}"
+                        Command="{Binding TurnOnAIAnalysisCommand}">
+                    Turn On
+                </Button>  
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>
