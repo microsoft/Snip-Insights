@@ -14,7 +14,7 @@ Then navigate to the code location on your Windows 10 machine and double click t
 
 From there, select the C# project file `SnipInsight.csproj`. You should now be able to build and run the solution. 
 
-The next step to test the AI features is to generate API keys for each AI service. Read our [guide](https://github.com) to learn how to generate API keys and then paste them in the settings panel.
+The next step to test the AI features is to generate API keys for each AI service. Go to the the [Azure portal](https://ms.portal.azure.com/), create and account or login if you already have one and generate and API keys for each functionnality you want to use. You can now paste each key in the settings panel of the application.
 
 Congratulations! You should now have a fully working application to get started. Have fun testing the project and thank you for your contribution! 
 
