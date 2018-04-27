@@ -1,4 +1,4 @@
-# Snip Insights - Open Source
+# Snip Insights
 
 Snip Insights is a screen capturing application that revolutionizes the way users search by generating insights from images. It leverages Microsoft Azure's Cognitive Services APIs to increase users' productivity by reducing the number of steps needed to gain intelligent insights. This application is developed by Microsoft Vancouver Garage interns.
 
@@ -16,24 +16,35 @@ Snip Insights is a screen capturing application that revolutionizes the way user
 To get started with Snip Insights, please fork or download the project from this [GitHub repository](https://github.com/Microsoft/Snip-Insights).
 
 ``` bash
-git clone https://github.com/Microsoft/FutureRepo.git
+git clone https://github.com/Microsoft/Snip-Insights.git
 ```
 
-Open the `SnipInsights.sln` and you'll be ready to compile the project! However, you would first need to generate Cognitive Services API keys from Azure. Feel free to refer to our [Generate API Keys](https://github.com) guide if needed.
+Open the `SnipInsights.sln` and you'll be ready to compile the project! However, you would first need to generate Cognitive Services API keys from Azure. 
 
-For more informations about the installation process, please visit our full [Installation Guide](https://github.com).
+For more informations about the installation process, please visit our full [Installation Guide](https://github.com/Microsoft/Snip-Insights/blob/master/Installation.md).
 
 ## Contributing
 
-If you would like to contribute to the project by fixing issues or adding features, please take a look at our guide, [How to Contribute](https://github.com), and make sure you read our [Code of Conduct](https://github.com).
+This project welcomes contributions and suggestions. Most contributions require you to
+agree to a Contributor License Agreement (CLA) declaring that you have the right to,
+and actually do, grant us the rights to use your contribution. For details, visit
+https://cla.microsoft.com.
+
+When you submit a pull request, a CLA-bot will automatically determine whether you need
+to provide a CLA and decorate the PR appropriately (e.g., label, comment). Simply follow the
+instructions provided by the bot. You will only need to do this once across all repositories using our CLA.
+
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
+For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/)
+or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
 ## Feedback
 
 You can submit feedback by:
 
-* Requesting a new feature on [GitHub](https://github.com).
-* Voting for popular feature requests, also on [GitHub](https://github.com).
-* Filing a bug report, yet again on [GitHub](https://github.com).
+* Requesting a new feature on [GitHub](https://github.com/Microsoft/Snip-Insights/issues).
+* Voting for popular feature requests, also on [GitHub](https://github.com/Microsoft/Snip-Insights/pulls).
+* Filing a bug report, yet again on [GitHub](https://github.com/Microsoft/Snip-Insights/issues).
 
 ## Intern team
 
