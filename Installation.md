@@ -8,7 +8,7 @@
 
 ## Installation process
 
-You can fork the project in the github repository of [SnipAI](https://github.com).
+You can fork the project in the github repository of [SnipInsights](https://github.com/Microsoft/Snip-Insights).
 
 Then navigate to the code location on your Windows 10 machine and double click the solution file `SnipInsight.sln`.
 
