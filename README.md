@@ -21,7 +21,7 @@ git clone https://github.com/Microsoft/Snip-Insights.git
 
 Open the `SnipInsights.sln` and you'll be ready to compile the project! However, you would first need to generate Cognitive Services API keys from Azure. 
 
-For more informations about the installation process, please visit our full [Installation Guide](https://github.com/Microsoft/Snip-Insights/blob/master/Installation.md).
+For more information about the installation process, please visit our full [Installation Guide](https://github.com/Microsoft/Snip-Insights/blob/master/Installation.md).
 
 ## Contributing
 
@@ -48,13 +48,13 @@ You can submit feedback by:
 
 ## Intern team
 
-* Athi Narayanan Jeyaraj - Developer
-* Charmaine Lee - Program Manager
-* Christie Chan - Designer
-* David Wu - Developer
-* Jeffrey Chang - Developer
-* Mehdi Chaid - Developer
-* Vivy Wang - Developer
+* [Athi Narayanan Jeyaraj](https://www.linkedin.com/in/athi-narayanan/) - Developer
+* [Charmaine Lee](https://www.linkedin.com/in/charmaineklee/) - Program Manager
+* [Christie Chan](https://www.linkedin.com/in/chrchan) - Designer
+* [David Wu](https://www.linkedin.com/in/davwu) - Developer
+* [Jeffrey Chang](https://www.linkedin.com/in/jeffrey-chang) - Developer
+* [Mehdi Chaid](https://www.linkedin.com/in/mehdi-chaid) - Developer
+* [Vivy Wang](https://www.linkedin.com/in/vivywang) - Developer
 
 ## Reporting Security Issues
 
