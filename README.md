@@ -21,7 +21,7 @@ git clone https://github.com/Microsoft/Snip-Insights.git
 
 Open the `SnipInsights.sln` and you'll be ready to compile the project! However, you would first need to generate Cognitive Services API keys from Azure. 
 
-For more information about the installation process, please visit our full [Installation Guide](https://github.com/Microsoft/Snip-Insights/blob/master/Installation.md).
+For more information about the installation process and adding Cognitive Service API keys to Snip Insights, please visit our full [Installation Guide](https://github.com/Microsoft/Snip-Insights/blob/master/Installation.md).
 
 ## Contributing
 
