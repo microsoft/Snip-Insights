@@ -1,6 +1,8 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 using SnipInsight.AIServices.AIModels;
+using SnipInsight.Util;
+
 namespace SnipInsight.AIServices.AILogic
 {
     /// <summary>
@@ -13,8 +15,8 @@ namespace SnipInsight.AIServices.AILogic
         /// </summary>
         public PrintedTextHandler(string keyFile) : base(keyFile)
         {
-            Host = "westcentralus.api.cognitive.microsoft.com";
-            Endpoint = "vision/v1.0/ocr";
+            Host = UserSettings.GetKey(keyFile + "Endpoint", "westus.api.cognitive.microsoft.com/vision/v1.0");
+            Endpoint = "ocr";
             RequestParams = "language=unk&detectOrientation=true";
         }
     }

@@ -6,6 +6,7 @@ using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using SnipInsight.Util;
 
 namespace SnipInsight.AIServices.AILogic
 {
@@ -32,8 +33,8 @@ namespace SnipInsight.AIServices.AILogic
         public ImageSearchHandler(string keyFile): base(keyFile)
 
         {
-            Host = "api.cognitive.microsoft.com";
-            Endpoint = "/bing/v7.0/images/details";
+            Host = UserSettings.GetKey(keyFile + "Endpoint", "api.cognitive.microsoft.com/bing/v7.0");
+            Endpoint = "images/details";
             RequestParams = "modules=SimilarImages";
 
             BuildURI();

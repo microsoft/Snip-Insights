@@ -46,6 +46,13 @@ namespace SnipInsight.Views
             ContentModerator.Text = UserSettings.GetKey(ContentModerator.Name);
             LUISAppId.Text = UserSettings.GetKey(LUISAppId.Name);
             LUISKey.Text = UserSettings.GetKey(LUISKey.Name);
+            EntitySearchEndpoint.Text = UserSettings.GetKey(EntitySearchEndpoint.Name);
+            ImageAnalysisEndpoint.Text = UserSettings.GetKey(ImageAnalysisEndpoint.Name);
+            ImageSearchEndpoint.Text = UserSettings.GetKey(ImageSearchEndpoint.Name);
+            TextRecognitionEndpoint.Text = UserSettings.GetKey(TextRecognitionEndpoint.Name);
+            TranslatorEndpoint.Text = UserSettings.GetKey(TranslatorEndpoint.Name);
+            ContentModeratorEndpoint.Text = UserSettings.GetKey(ContentModeratorEndpoint.Name);
+            LUISKeyEndpoint.Text = UserSettings.GetKey(LUISKeyEndpoint.Name);
 
             UpdateLocationPreview();
 
@@ -272,11 +279,13 @@ namespace SnipInsight.Views
         private void UpdateKey(TextBox t)
         {
             string oldKey = UserSettings.GetKey(t.Name);
-            if (t.Text.Equals(oldKey))
+            string value = t.Text.ToLower().Replace("https://", "");  //strip any url specific bits.
+
+            if (value.Equals(oldKey))
             {
                 return;
             }
-            UserSettings.SetKey(t.Name,t.Text);
+            UserSettings.SetKey(t.Name,value);
         }
 
         /// <summary>
@@ -292,6 +301,14 @@ namespace SnipInsight.Views
             UpdateKey(ContentModerator);
             UpdateKey(LUISKey);
             UpdateKey(LUISAppId);
+
+            UpdateKey(EntitySearchEndpoint);
+            UpdateKey(ImageAnalysisEndpoint);
+            UpdateKey(ImageSearchEndpoint);
+            UpdateKey(TextRecognitionEndpoint);
+            UpdateKey(TranslatorEndpoint);
+            UpdateKey(ContentModeratorEndpoint);
+            UpdateKey(LUISKeyEndpoint);
             MessageBox.Show(SnipInsight.Properties.Resources.Key_Restart,
                         "Info",
                         MessageBoxButton.OK,

@@ -287,6 +287,15 @@ namespace SnipInsight.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Content Moderator Endpoint.
+        /// </summary>
+        public static string ContentModerator_Endpoint {
+            get {
+                return ResourceManager.GetString("ContentModerator_Endpoint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Copy to clipboard after a snip.
         /// </summary>
         public static string Copy_to_clipboard {
@@ -337,6 +346,15 @@ namespace SnipInsight.Properties {
         public static string Entity_Search {
             get {
                 return ResourceManager.GetString("Entity_Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entity Search Endpoint.
+        /// </summary>
+        public static string Entity_Search_Endpoint {
+            get {
+                return ResourceManager.GetString("Entity_Search_Endpoint", resourceCulture);
             }
         }
         
@@ -485,6 +503,15 @@ namespace SnipInsight.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Image Analysis (Computer Vision) Endpoint.
+        /// </summary>
+        public static string Image_Analysis_Endpoint {
+            get {
+                return ResourceManager.GetString("Image_Analysis_Endpoint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sorry, Image cannot be loaded.
         /// </summary>
         public static string Image_Not_Loaded {
@@ -499,6 +526,15 @@ namespace SnipInsight.Properties {
         public static string Image_Search {
             get {
                 return ResourceManager.GetString("Image_Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image Search (Bing Search) Endpoint.
+        /// </summary>
+        public static string Image_Search_Endpoint {
+            get {
+                return ResourceManager.GetString("Image_Search_Endpoint", resourceCulture);
             }
         }
         
@@ -600,6 +636,15 @@ namespace SnipInsight.Properties {
         public static string LUIS_App_id {
             get {
                 return ResourceManager.GetString("LUIS_App_id", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to LUIS Endpoint.
+        /// </summary>
+        public static string LUIS_Endpoint {
+            get {
+                return ResourceManager.GetString("LUIS_Endpoint", resourceCulture);
             }
         }
         
@@ -1216,11 +1261,29 @@ namespace SnipInsight.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Text Recognition (Computer Vision) Endpoint.
+        /// </summary>
+        public static string Text_Recognition_Endpoint {
+            get {
+                return ResourceManager.GetString("Text_Recognition_Endpoint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Translator.
         /// </summary>
         public static string Translator {
             get {
                 return ResourceManager.GetString("Translator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Translator Text API Endpoint.
+        /// </summary>
+        public static string Translator_Endpoint {
+            get {
+                return ResourceManager.GetString("Translator_Endpoint", resourceCulture);
             }
         }
         

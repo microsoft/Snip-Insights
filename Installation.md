@@ -24,9 +24,23 @@ To add the keys to Snip-Insights, Build and Start the application.  Once running
 - Text Recognition - You can use the same key as used in Image Analysis.  Both Image Analysis and Text Recognition use Computer Vision API.
 - Translator - Use the **Translator Text API** Cognitive Service.
 - Content Moderator - Use the **Content Moderator API** Cognitive Service.
-- LUIS Key - Use the **Language Understanding** Cognitive Service.
 
-For the LUIS App ID, you will need to create a Language Understanding application in the Language Understanding Portal ([https://luis.ai](https://luis.ai))
+For the LUIS App ID and Key, you will need to create a Language Understanding application in the Language Understanding Portal ([https://luis.ai](https://luis.ai))
+Use the following steps to create your LUIS App and retrieve an App ID
+
+- Click on **Create new app** button.
+- Provide an app name.  Leave Culture (English) and Description as defaults.
+- Click **Done**
+- In the left navigation pane, click **Entities**
+- Click **Manage prebuild entities**
+- Select **datetimeV2** and **email**
+- Click **Done**
+- Click the **Train** button at the top of the page
+- Click the **Publish** tab.
+- Click the **Publish to production slot** button
+- At the bottom of the screen you will see a list with a Key String field.  Click the **Copy** button and paste that key value into the LUIS Key field in settings for Snip Insights
+- Click the **Settings** tab (at the top)
+- Copy the **Application ID** shown and paste into the LUIS App Id field in Settings for Snip Insights-  
 
 You can now paste each key in the settings panel of the application.
 

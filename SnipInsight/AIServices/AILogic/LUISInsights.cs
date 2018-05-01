@@ -18,8 +18,8 @@ namespace SnipInsight.AIServices.AILogic
         /// <param name="keyFile"></param>
         public LUISInsights(string keyFile) : base(keyFile)
         {
-            Host = "westus.api.cognitive.microsoft.com";
-            Endpoint = "luis/v2.0/apps/" + UserSettings.GetKey("LUISAppId");
+            Host = UserSettings.GetKey(keyFile + "Endpoint", "westus.api.cognitive.microsoft.com/luis/v2.0");
+            Endpoint = "apps/" + UserSettings.GetKey("LUISAppId");
         }
 
         /// <summary>

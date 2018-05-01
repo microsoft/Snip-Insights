@@ -566,4 +566,25 @@ Please restart the application to apply changes. </value>
   <data name="InkCursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\InkCursor.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="ContentModerator_Endpoint" xml:space="preserve">
+    <value>Content Moderator Endpoint</value>
+  </data>
+  <data name="Entity_Search_Endpoint" xml:space="preserve">
+    <value>Entity Search Endpoint</value>
+  </data>
+  <data name="Image_Analysis_Endpoint" xml:space="preserve">
+    <value>Image Analysis (Computer Vision) Endpoint</value>
+  </data>
+  <data name="Image_Search_Endpoint" xml:space="preserve">
+    <value>Image Search (Bing Search) Endpoint</value>
+  </data>
+  <data name="LUIS_Endpoint" xml:space="preserve">
+    <value>LUIS Endpoint</value>
+  </data>
+  <data name="Text_Recognition_Endpoint" xml:space="preserve">
+    <value>Text Recognition (Computer Vision) Endpoint</value>
+  </data>
+  <data name="Translator_Endpoint" xml:space="preserve">
+    <value>Translator Text API Endpoint</value>
+  </data>
 </root>
