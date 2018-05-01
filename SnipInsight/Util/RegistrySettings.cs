@@ -521,6 +521,25 @@ namespace SnipInsight.Util
         }
 
         /// <summary>
+        /// Fetch API keys/endpoints for cognitive services
+        /// </summary>
+        /// <param name="keyName">Name of the service, whose value is fetched</param>
+        /// <param name="defaultValue">if the key does not exist, use this default</param>
+        /// <returns></returns>
+        internal static string GetKey(string keyName, string defaultValue)
+        {
+            var value = SettingsRegKey.RetrieveStringValue(SettingsKey, keyName, ref _key);
+            if (string.IsNullOrEmpty(value))
+            {
+                value = defaultValue;
+                SetKey(keyName, value);
+            }
+
+            return value;
+
+        }
+
+        /// <summary>
         /// Fetch API keys for cognitive services.
         /// </summary>
         /// <param name="keyName">Name of the service, whose key is fetched</param>

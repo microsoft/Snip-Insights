@@ -1,6 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 using SnipInsight.AIServices.AIModels;
+using SnipInsight.Util;
 
 namespace SnipInsight.AIServices.AILogic
 {
@@ -16,8 +17,8 @@ namespace SnipInsight.AIServices.AILogic
         /// <param name="client">Instance of HttpClient to be used for the API call</param>
         internal ImageAnalysisHandler(string key): base(key)
         {
-            Host = "westus.api.cognitive.microsoft.com";
-            Endpoint = "/vision/v1.0/analyze";
+            Host = UserSettings.GetKey(key + "Endpoint", "westus.api.cognitive.microsoft.com/vision/v1.0");
+            Endpoint = "analyze";
             RequestParams = "visualFeatures=Tags,Description&language=en&details=Celebrities,Landmarks";
 
             BuildURI();

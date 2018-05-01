@@ -102,7 +102,7 @@
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -232,6 +232,142 @@
                          AutomationProperties.Name="LUISAppIdTextbox">
                     </TextBox>
                 </Grid>
+                <TextBlock Style="{DynamicResource SettingsTitleStyle}"
+                       Text="Insight Service Endpoints" AutomationProperties.Name="InsightServiceEndpointsSubPanel"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0">
+                        <Hyperlink RequestNavigate="Open_HyperLink"
+                                   NavigateUri="https://azure.microsoft.com/services/cognitive-services/bing-entity-search-api/"
+                                   AutomationProperties.Name="GetEntityKeyHyperLink">
+                            <TextBlock Margin="0,0,0,10"
+                                       Style="{DynamicResource SettingsTextStyle}" 
+                                       Text="{x:Static properties:Resources.Entity_Search_Endpoint}"/>
+                        </Hyperlink>
+                    </TextBlock>
+                    <TextBox Grid.Row="0" Grid.Column="1" Name="EntitySearchEndpoint"
+                             Style="{DynamicResource SettingsTextBoxStyle}"
+                             AutomationProperties.Name="EntitySearchKeyTextbox">
+                    </TextBox>
+                    <TextBlock Grid.Row="1" Grid.Column="0">
+                        <Hyperlink RequestNavigate="Open_HyperLink"
+                                   NavigateUri="https://azure.microsoft.com/services/cognitive-services/computer-vision/"
+                                   AutomationProperties.Name="GeImageAnalysisKeyHyperLink">
+                            <TextBlock Margin="0,0,0,10"
+                                       Style="{DynamicResource SettingsTextStyle}"
+                                       Text="{x:Static properties:Resources.Image_Analysis_Endpoint}"/>
+                        </Hyperlink>
+                        </TextBlock>
+                    <TextBox Grid.Row="1" Grid.Column="1" Name="ImageAnalysisEndpoint"
+                         Style="{DynamicResource SettingsTextBoxStyle}"
+                         AutomationProperties.Name="ImageAnalysisKeyTextbox">
+                    </TextBox>
+                    <TextBlock Grid.Row="2"
+                               Grid.Column="0">
+                        <Hyperlink RequestNavigate="Open_HyperLink"
+                                   NavigateUri="https://azure.microsoft.com/services/cognitive-services/bing-image-search-api/"
+                                   AutomationProperties.Name="GetImageSearchKeyHyperLink">
+                            <TextBlock Margin="0,0,0,10"
+                                       Style="{DynamicResource SettingsTextStyle}"
+                                       Text="{x:Static properties:Resources.Image_Search_Endpoint}"/>
+                        </Hyperlink>
+                        </TextBlock>
+                    <TextBox Grid.Row="2"
+                             Grid.Column="1"
+                             Name="ImageSearchEndpoint"
+                         Style="{DynamicResource SettingsTextBoxStyle}"
+                         AutomationProperties.Name="ImageSearchKeyTextbox">
+                    </TextBox>
+                    <TextBlock Grid.Row="3"
+                               Grid.Column="0">
+                        <Hyperlink RequestNavigate="Open_HyperLink"
+                                   NavigateUri="https://azure.microsoft.com/services/cognitive-services/computer-vision/"
+                                   AutomationProperties.Name="GetTextRecognitionKeyHyperLink">
+                            <TextBlock Margin="0,0,0,10"
+                                       Style="{DynamicResource SettingsTextStyle}"
+                                       Text="{x:Static properties:Resources.Text_Recognition_Endpoint}"/>
+                        </Hyperlink>
+                    </TextBlock>
+                    <TextBox Grid.Row="3" Grid.Column="1" Name="TextRecognitionEndpoint"
+                         Style="{DynamicResource SettingsTextBoxStyle}"
+                         AutomationProperties.Name="TextRecognitionKeyTextbox">
+                    </TextBox>
+                    <TextBlock Grid.Row="4"
+                               Grid.Column="0">
+                        <Hyperlink RequestNavigate="Open_HyperLink"
+                                   NavigateUri="https://azure.microsoft.com/services/cognitive-services/computer-vision/"
+                                   AutomationProperties.Name="GetTranslatorKeyHyperLink">
+                            <TextBlock Margin="0,0,0,10"
+                                       Style="{DynamicResource SettingsTextStyle}"
+                                       Text="{x:Static properties:Resources.Translator_Endpoint}"/>
+                        </Hyperlink>
+                    </TextBlock>
+                    <TextBox Grid.Row="4"
+                             Grid.Column="1" 
+                             Name="TranslatorEndpoint"
+                         Style="{DynamicResource SettingsTextBoxStyle}"
+                         AutomationProperties.Name="TranslatorKeyTextbox">
+                    </TextBox>
+                    <TextBlock Grid.Row="5"
+                               Grid.Column="0">
+                        <Hyperlink RequestNavigate="Open_HyperLink"
+                                   NavigateUri="https://azure.microsoft.com/services/cognitive-services/content-moderator/"
+                                   AutomationProperties.Name="GetContentModeratorKeyHyperLink">
+                            <TextBlock Margin="0,0,0,10"
+                                       Style="{DynamicResource SettingsTextStyle}"
+                                       Text="{x:Static properties:Resources.ContentModerator_Endpoint}"/>
+                        </Hyperlink>
+                    </TextBlock>
+                    <TextBox Grid.Row="5"
+                             Grid.Column="1"
+                             Name="ContentModeratorEndpoint"
+                         Style="{DynamicResource SettingsTextBoxStyle}"
+                         AutomationProperties.Name="ContentModeratorKeyTextbox">
+                    </TextBox>
+                    <TextBlock Grid.Row="6" Grid.Column="0">
+                        <Hyperlink RequestNavigate="Open_HyperLink"
+                                   NavigateUri="https://azure.microsoft.com/services/cognitive-services/language-understanding-intelligent-service/"
+                                   AutomationProperties.Name="GetLUISKeyHyperLink">
+                            <TextBlock Margin="0,0,0,10"
+                                       Style="{DynamicResource SettingsTextStyle}"
+                                       Text="{x:Static properties:Resources.LUIS_Endpoint}"/>
+                        </Hyperlink>
+                    </TextBlock>
+                    <TextBox Grid.Row="6"
+                             Grid.Column="1"
+                             Name="LUISKeyEndpoint"
+                         Style="{DynamicResource SettingsTextBoxStyle}"
+                         AutomationProperties.Name="LUIS Key Textbox">
+                    </TextBox>
+                    <!--<TextBlock Grid.Row="7"
+                               Grid.Column="0">
+                        <Hyperlink RequestNavigate="Open_HyperLink"
+                                   NavigateUri="https://azure.microsoft.com/services/cognitive-services/language-understanding-intelligent-service/"
+                                   AutomationProperties.Name="Get LUIS App ID KeyHyperLink">
+                            <TextBlock Margin="0,0,0,10"
+                                       Style="{DynamicResource SettingsTextStyle}"
+                                       Text="{x:Static properties:Resources.LUIS_App}"/>
+                        </Hyperlink>
+                    </TextBlock>
+                    <TextBox Grid.Row="7" Grid.Column="1" Name="LUISAppId"
+                         Style="{DynamicResource SettingsTextBoxStyle}"
+                         AutomationProperties.Name="LUISAppIdTextbox">
+                    </TextBox>-->
+                </Grid>
+
                 <Button Style="{DynamicResource SettingsPanelButton}"
                         Grid.Row="1"
                         Grid.Column="1"

@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
+using SnipInsight.Util;
 
 namespace SnipInsight.AIServices.AILogic
 {
@@ -17,8 +18,8 @@ namespace SnipInsight.AIServices.AILogic
         /// <param name="key"> API key for Bing News Search </param>
         public NewsHandler(string keyFile): base(keyFile)
         {
-            Host = "api.cognitive.microsoft.com";
-            Endpoint = "bing/v7.0/news/search";
+            Host = UserSettings.GetKey(keyFile + "Endpoint", "api.cognitive.microsoft.com/bing/v7.0");
+            Endpoint = "news/search";
         }
 
         /// <summary>

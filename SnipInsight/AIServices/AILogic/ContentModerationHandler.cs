@@ -45,7 +45,7 @@ namespace SnipInsight.AIServices.AILogic
             RetrieveKey(keyFile);
             contentModerationClient = client ?? new HttpClient();
             contentModerationClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", key);
-            BuildURI();
+            BuildURI(keyFile);
         }
 
         /// <summary>
@@ -71,13 +71,13 @@ namespace SnipInsight.AIServices.AILogic
         /// <summary>
         /// Build the URI for the API request
         /// </summary>
-        private void BuildURI()
+        private void BuildURI(string keyFile)
         {
             URI = new UriBuilder
             {
                 Scheme = "https",
-                Host = "westus.api.cognitive.microsoft.com",
-                Path = "contentmoderator/moderate/v1.0/ProcessImage/Evaluate",
+                Host = UserSettings.GetKey(keyFile + "Endpoint", "westus.api.cognitive.microsoft.com/contentmoderator"),
+                Path = "moderate/v1.0/ProcessImage/Evaluate",
                 Query = "CacheImage=true"
             }.Uri;
         }

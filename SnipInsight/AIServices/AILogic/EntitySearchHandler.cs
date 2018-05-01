@@ -5,6 +5,7 @@ using System;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Threading.Tasks;
+using SnipInsight.Util;
 
 namespace SnipInsight.AIServices.AILogic
 {
@@ -20,8 +21,8 @@ namespace SnipInsight.AIServices.AILogic
         /// <param name="key"> API key for Bing Entity Search </param>
         public EntitySearchHandler(string keyFile): base(keyFile)
         {
-            Host = "api.cognitive.microsoft.com";
-            Endpoint = "bing/v7.0/entities";
+            Host = UserSettings.GetKey(keyFile + "Endpoint", "api.cognitive.microsoft.com/bing/v7.0");
+            Endpoint = "entities";
         }
 
         /// <summary>

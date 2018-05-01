@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using SnipInsight.Util;
 
 namespace SnipInsight.AIServices.AILogic
 {
@@ -20,8 +21,8 @@ namespace SnipInsight.AIServices.AILogic
         /// </summary>
         public HandWrittenTextHandler(string keyFile): base(keyFile)
         {
-            Host = "westcentralus.api.cognitive.microsoft.com";
-            Endpoint = "vision/v1.0/recognizeText";
+            Host = UserSettings.GetKey(keyFile + "Endpoint", "westus.api.cognitive.microsoft.com/vision/v1.0");
+            Endpoint = "recognizeText";
             RequestParams = "handwriting=true";
         }
 
