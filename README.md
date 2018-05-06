@@ -1,6 +1,6 @@
 # Snip Insights
 
-Snip Insights, a Microsoft Garage Project is a screen capturing application that revolutionizes the way users search by generating insights from images. It leverages Microsoft Azure's Cognitive Services APIs to increase users' productivity by reducing the number of steps needed to gain intelligent insights. Microsoft Garage turns fresh ideas into real projects.  Learn more at [microsoft.com/garage](microsoft.com/garage).
+Snip Insights, a Microsoft Garage Project is a screen capturing application that revolutionizes the way users search by generating insights from images. It leverages Microsoft Azure's Cognitive Services APIs to increase users' productivity by reducing the number of steps needed to gain intelligent insights. Microsoft Garage turns fresh ideas into real projects.  Learn more at [http://microsoft.com/garage](http://microsoft.com/garage).
 
 ## Installation
 
