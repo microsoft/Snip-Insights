@@ -16,7 +16,7 @@ From there, select the C# project file `SnipInsight.csproj`. You should now be a
 
 The next step to test the AI features is to generate API keys for each AI service (listed below). Go to the [Azure portal](https://ms.portal.azure.com/), create an account or login if you already have one and generate API keys for each functionality you want to use. 
 
-To add the keys to Snip-Insights, Build and Start the application.  Once running, click/tap the **Settings** icon in the toolbar.  Scroll down until you find the "Cognitive Services, Enable AI assistance" toggle, and toggle it to the **On** position.  You should now see the Insight Service Keys section.
+To add the keys to Snip Insights, a Microsoft Garage Project, build and Start the application.  Once running, click/tap the **Settings** icon in the toolbar.  Scroll down until you find the "Cognitive Services, Enable AI assistance" toggle, and toggle it to the **On** position.  You should now see the Insight Service Keys section.
 
 - Entity Search - Create new Entity Search Cognitive Service.  Once created, you can display the keys.  Select one and paste into "Settings"
 - Image Analysis - In Azure, create a **Computer Vision API ** Cognitive Service and use its key.
