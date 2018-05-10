@@ -31,7 +31,9 @@
         <TextBlock Grid.Row="0"
                    Text="{x:Static properties:Resources.Who_is_this}"
                    Style="{DynamicResource AIHeadingText}"
-                   VerticalAlignment="Bottom"/>
+                   VerticalAlignment="Bottom"
+                   AutomationProperties.IsColumnHeader="True"
+                   AutomationProperties.Name="Heading: Who Is This?"/>
         <Grid Grid.Row="1" VerticalAlignment="Top">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"
