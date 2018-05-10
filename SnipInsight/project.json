@@ -4,13 +4,13 @@
     "Microsoft.Data.Edm": "5.6.2",
     "Microsoft.Data.OData": "5.6.2",
     "Microsoft.Data.Services.Client": "5.6.2",
-    "Microsoft.Net.Http": "2.2.29",
     "Microsoft.Office.Interop.Outlook": "15.0.4797.1003",
     "Microsoft.WindowsAPICodePack.Shell": "1.1.0",
     "MvvmLightLibs": "5.4.1",
     "Newtonsoft.Json": "10.0.3",
     "Stateless": "2.4.0",
     "System.Diagnostics.DiagnosticSource": "4.0.0",
+    "System.Net.Http": "4.3.3",
     "System.Net.Http.Formatting.Extension": "5.2.3"
   },
   "frameworks": {
