@@ -31,20 +31,23 @@
                             CommandParameter="{Binding}"
                             Style="{DynamicResource ImageButton}"
                             AutomationProperties.Name="ProductImage">
-                        <Image x:Name="ProductImage" Source="{Binding Path=Image}"
+                        <Image x:Name="ProductImage" Source="{Binding Path=Image}" 
+                               ToolTip="{Binding Path=Name, StringFormat=Image Name: \{0\}}"
                                Style="{DynamicResource ProductResultsImage}" Grid.Row="0" />
                         </Button>
                         <TextBlock Text="{Binding Path=Name}"
                                    Style="{DynamicResource ProductResultsTitle}" Grid.Row="1"
                                    Width="{Binding Path=ActualWidth, ElementName=ProductImage}"
-                                   AutomationProperties.Name="ProductName"
-                                   AutomationProperties.ItemStatus="{Binding RelativeSource={RelativeSource Self},Path= Text}"/>
+                                   AutomationProperties.Name="{Binding Path=Name}"
+                                   AutomationProperties.ItemStatus="{Binding RelativeSource={RelativeSource Self},Path= Text}"
+                                   ToolTip="{Binding Path=Name}"/>
 
                         <TextBlock Text="{Binding Path=Metadata.Offer.Price, StringFormat=US \$\{0\}}"
                                    Style="{DynamicResource ProductResultsPrice}" Grid.Row="2"
                                    Width="{Binding Path=ActualWidth, ElementName=ProductImage}"
-                                   AutomationProperties.Name="ProductPrice"
-                                   AutomationProperties.ItemStatus="{Binding RelativeSource={RelativeSource Self},Path= Text}"/>
+                                   ToolTip="{Binding Path=Metadata.Offer.Price, StringFormat=Product Price: \$\{0\}}"
+                                   AutomationProperties.Name="{Binding Path=Metadata.Offer.Price, StringFormat=Product Price: \$\{0\}}"
+                                   AutomationProperties.ItemStatus="{Binding RelativeSource={RelativeSource Self},Path=Text}"/>
 
                         <TextBlock Style="{DynamicResource ProductResultsSeller}" Grid.Row="3"
                                    Width="{Binding Path=ActualWidth, ElementName=ProductImage}"
