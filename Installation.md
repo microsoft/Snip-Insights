@@ -25,7 +25,7 @@ To add the keys to Snip Insights, a Microsoft Garage Project, build and Start th
 - Translator - Use the **Translator Text API** Cognitive Service.
 - Content Moderator - Use the **Content Moderator API** Cognitive Service.
 
-For the LUIS App ID and Key, you will need to create a Language Understanding application in the Language Understanding Portal ([https://luis.ai](https://luis.ai))
+For the LUIS App ID and Key, you will need to create a Language Understanding application in the Language Understanding Portal ([https://www.luis.ai](https://www.luis.ai))
 Use the following steps to create your LUIS App and retrieve an App ID
 
 - Click on **Create new app** button.
