@@ -83,7 +83,9 @@
         <TextBlock Grid.Row="0"
                    Text="{Binding Path=Celebrity.Name,
                                   StringFormat='News about {0}'}"
-                   Style="{DynamicResource AIHeadingText}"/>
+                   Style="{DynamicResource AIHeadingText}"
+                   AutomationProperties.Name ="{Binding Path=Celebrity.Name,
+                                  StringFormat='Heading: News about {0}'}"/>
         <ItemsControl Grid.Row="1"
                       ItemsSource="{Binding Celebrity.News}"
                       ItemTemplate="{StaticResource NewsTemplate}">
