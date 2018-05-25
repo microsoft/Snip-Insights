@@ -334,7 +334,7 @@ namespace SnipInsight.AIServices.AIViewModels
                     result.Append(line.Text + "\n");
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             { }
 
             string writtenResult = result.ToString() ?? string.Empty;
@@ -356,7 +356,7 @@ namespace SnipInsight.AIServices.AIViewModels
                     }
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             { }
 
             printedResult = result.ToString() ?? string.Empty;

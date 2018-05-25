@@ -1106,7 +1106,7 @@
         <Setter Property="BorderThickness" Value="2" />
         <Setter Property="BorderBrush" Value="LightGray" />
         <Setter Property="Height" Value="Auto" />
-        <Setter Property="MaxLength" Value="50" />
+        <Setter Property="MaxLength" Value="255" />
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
         <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
         <Setter Property="TextWrapping" Value="NoWrap" />

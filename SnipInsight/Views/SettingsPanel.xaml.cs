@@ -53,7 +53,8 @@ namespace SnipInsight.Views
             TranslatorEndpoint.Text = UserSettings.GetKey(TranslatorEndpoint.Name);
             ContentModeratorEndpoint.Text = UserSettings.GetKey(ContentModeratorEndpoint.Name);
             LUISKeyEndpoint.Text = UserSettings.GetKey(LUISKeyEndpoint.Name);
-
+            UpdateButton.IsEnabled = false;
+            UpdateButtonKeys.IsEnabled = false;
             UpdateLocationPreview();
 
             this.DataContext = AppManager.TheBoss.ViewModel;
@@ -313,6 +314,19 @@ namespace SnipInsight.Views
                         "Info",
                         MessageBoxButton.OK,
                         MessageBoxImage.Information);
+            UpdateButton.IsEnabled = false;
+            UpdateButtonKeys.IsEnabled = false;
+        }
+
+        /// <summary>
+        /// Used to let the app know that text has changed.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Key_OnTextChanged(object sender, TextChangedEventArgs e)
+        {
+            UpdateButton.IsEnabled = true;
+            UpdateButtonKeys.IsEnabled = true;
         }
 
         /// <summary>
@@ -330,5 +344,7 @@ namespace SnipInsight.Views
         {
             System.Diagnostics.Process.Start(e.Uri.ToString());
         }
+
+
     }
 }

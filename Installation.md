@@ -43,6 +43,9 @@ Use the following steps to create your LUIS App and retrieve an App ID
 - Copy the **Application ID** shown and paste into the LUIS App Id field in Settings for Snip Insights-  
 
 You can now paste each key in the settings panel of the application.
+Remember to Click the **Save** button after entering all the keys.
+
+> **NOTE** For each key entered there is a corresponding Service Endpoint.  There are some default endpoints included (You can use as an example) but when you copy each key, also check and replace the Service Endpoint for each service you are using.  You will find the service endpoint for each Cognitive Service on the Overview Page.  Remember to Click the **Save** button after updating all the Service Endpoints.
 
 Congratulations! You should now have a fully working application to get started. Have fun testing the project and thank you for your contribution! 
 

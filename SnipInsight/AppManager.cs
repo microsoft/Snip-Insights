@@ -151,7 +151,7 @@ namespace SnipInsight
                 { ActionNames.ShareSendToOneNoteWithImage, WrapException(OnShareSendToOneNoteWithImage)},
                 { ActionNames.CopyWithImage, WrapException(OnCopyWithImage)},
                 { ActionNames.ClearOldImageData, WrapException(ClearOldImageData)},
-                { ActionNames.Delete, WrapAsyncException(OnDelete)},
+                { ActionNames.Delete, WrapException(OnDelete)},
                 { ActionNames.DeleteLibraryItems, WrapAsyncException(OnDeleteLibraryItems)},
                 { ActionNames.CleanFiles, WrapException(OnCleanFiles)},
                 { ActionNames.ShowImageCapturedToastMessage, WrapException(ShowImageCapturedToastMessage)},
@@ -853,9 +853,9 @@ namespace SnipInsight
             }
         }
 
-        private async Task OnDelete()
+        private void OnDelete()
         {
-            await Delete(ViewModel.SavedSnipInsightFile, ViewModel.SavedCaptureImage, ViewModel.SavedInkedImage, true);
+            Delete(ViewModel.SavedSnipInsightFile, ViewModel.SavedCaptureImage, ViewModel.SavedInkedImage, true);
         }
 
         private async Task OnDeleteLibraryItems()
@@ -868,7 +868,7 @@ namespace SnipInsight
             return DeleteAsync(ViewModel.SelectedLibraryItems, true, false);
         }
 
-        async public Task Delete(string SnipInsightFile, string savedCaptureImage, string savedInkedImage, bool raiseOutcomeTrigger)
+         public void Delete(string SnipInsightFile, string savedCaptureImage, string savedInkedImage, bool raiseOutcomeTrigger)
         {
             try
             {
@@ -887,7 +887,7 @@ namespace SnipInsight
                     return;
                 }
 
-                var success = await DeleteCore(SnipInsightFile, savedCaptureImage, savedInkedImage);
+                var success = DeleteCore(SnipInsightFile, savedCaptureImage, savedInkedImage);
 
                 if (success)
                 {
@@ -982,7 +982,7 @@ namespace SnipInsight
                 {
                     var deletedIndex = GetCurrentContentIndexInLibrary(item);
 
-                    var success = await DeleteCore(item);
+                    var success = DeleteCore(item);
 
                     processedCount++;
 
@@ -1355,7 +1355,7 @@ namespace SnipInsight
         }
 
 
-        public Task<bool> DeleteCore(SnipInsightLink SnipInsight)
+        public bool DeleteCore(SnipInsightLink SnipInsight)
         {
             bool isPackage = Path.GetExtension(SnipInsight.Url) == ".mixp";
 
@@ -1375,7 +1375,7 @@ namespace SnipInsight
         /// Delete files core.
         /// </summary>
         /// <returns></returns>
-        public async Task<bool> DeleteCore(string SnipInsightFile, string savedCaptureImage, string savedInkedImage)
+        public bool DeleteCore(string SnipInsightFile, string savedCaptureImage, string savedInkedImage)
         {
             // delete the captured image.
             if (!string.IsNullOrWhiteSpace(savedCaptureImage))
@@ -2052,7 +2052,7 @@ namespace SnipInsight
         }
 
         #region Share
-        async Task Publish(Action<OperationResult> continueWith, string failureMessageForToast, bool embedCodeNeeded = false)
+        void Publish(Action<OperationResult> continueWith, string failureMessageForToast, bool embedCodeNeeded = false)
         {
             if (continueWith == null)
             {

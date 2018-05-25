@@ -74,7 +74,7 @@ namespace SnipInsight.AIServices.AIViewModels
             {
                 Process.Start(url);
             }
-            catch (Win32Exception CaughtExeception)
+            catch (Win32Exception)
             {
                 MessageBox.Show(Resources.No_Browser);
             }

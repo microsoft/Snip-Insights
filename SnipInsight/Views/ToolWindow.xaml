@@ -183,7 +183,7 @@
                         <ari:AriIcon Template="{StaticResource Settings_32_Icon}" />
                     </ari:AriIconLabelButton>
                     <WrapPanel x:Name="StackControls" Orientation="Vertical" Height="60">
-                        <ari:AriRectangleIconButton x:Name="Close"
+                        <ari:AriRectangleIconButton x:Name="CloseButton"
                                                      Height="24"
                                                      Width="24"
                                                      Margin="3"
