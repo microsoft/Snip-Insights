@@ -97,8 +97,19 @@
                 Visibility="{Binding InsightsVisible, Converter={StaticResource BooleanToVisibility}}"
                              AutomationProperties.Name="Api Keys">
                 <Separator Margin="15"/>
-                <TextBlock Style="{DynamicResource SettingsTitleStyle}"
-                       Text="Insight Service Keys" AutomationProperties.Name="InsightServiceKeysSubPanel"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Style="{DynamicResource SettingsTitleStyle}"
+                               Text="Insight Service Keys" AutomationProperties.Name="InsightServiceKeysSubPanel"/>
+                    <Button Style="{DynamicResource SettingsPanelButton}"
+                            x:Name="UpdateButtonKeys"
+                            VerticalAlignment="Center"
+                            AutomationProperties.Name="SettingsPanelButton"
+                            ToolTip="{x:Static properties:Resources.UpdateKeys}"
+                            Margin="24,8,0,8"
+                            Click="UpdateAllKeys">
+                        Save
+                    </Button>
+                </StackPanel>
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
@@ -125,7 +136,7 @@
                     </TextBlock>
                     <TextBox Grid.Row="0" Grid.Column="1" Name="EntitySearch"
                              Style="{DynamicResource SettingsTextBoxStyle}"
-                             AutomationProperties.Name="EntitySearchKeyTextbox">
+                             AutomationProperties.Name="EntitySearchKeyTextbox" TextChanged="Key_OnTextChanged">
                     </TextBox>
                     <TextBlock Grid.Row="1" Grid.Column="0">
                         <Hyperlink RequestNavigate="Open_HyperLink"
@@ -138,7 +149,7 @@
                         </TextBlock>
                     <TextBox Grid.Row="1" Grid.Column="1" Name="ImageAnalysis"
                          Style="{DynamicResource SettingsTextBoxStyle}"
-                         AutomationProperties.Name="ImageAnalysisKeyTextbox">
+                         AutomationProperties.Name="ImageAnalysisKeyTextbox" TextChanged="Key_OnTextChanged">
                     </TextBox>
                     <TextBlock Grid.Row="2"
                                Grid.Column="0">
@@ -154,7 +165,7 @@
                              Grid.Column="1"
                              Name="ImageSearch"
                          Style="{DynamicResource SettingsTextBoxStyle}"
-                         AutomationProperties.Name="ImageSearchKeyTextbox">
+                         AutomationProperties.Name="ImageSearchKeyTextbox" TextChanged="Key_OnTextChanged">
                     </TextBox>
                     <TextBlock Grid.Row="3"
                                Grid.Column="0">
@@ -168,7 +179,7 @@
                     </TextBlock>
                     <TextBox Grid.Row="3" Grid.Column="1" Name="TextRecognition"
                          Style="{DynamicResource SettingsTextBoxStyle}"
-                         AutomationProperties.Name="TextRecognitionKeyTextbox">
+                         AutomationProperties.Name="TextRecognitionKeyTextbox" TextChanged="Key_OnTextChanged">
                     </TextBox>
                     <TextBlock Grid.Row="4"
                                Grid.Column="0">
@@ -184,7 +195,7 @@
                              Grid.Column="1" 
                              Name="Translator"
                          Style="{DynamicResource SettingsTextBoxStyle}"
-                         AutomationProperties.Name="TranslatorKeyTextbox">
+                         AutomationProperties.Name="TranslatorKeyTextbox" TextChanged="Key_OnTextChanged">
                     </TextBox>
                     <TextBlock Grid.Row="5"
                                Grid.Column="0">
@@ -200,7 +211,7 @@
                              Grid.Column="1"
                              Name="ContentModerator"
                          Style="{DynamicResource SettingsTextBoxStyle}"
-                         AutomationProperties.Name="ContentModeratorKeyTextbox">
+                         AutomationProperties.Name="ContentModeratorKeyTextbox" TextChanged="Key_OnTextChanged">
                     </TextBox>
                     <TextBlock Grid.Row="6" Grid.Column="0">
                         <Hyperlink RequestNavigate="Open_HyperLink"
@@ -215,7 +226,7 @@
                              Grid.Column="1"
                              Name="LUISKey"
                          Style="{DynamicResource SettingsTextBoxStyle}"
-                         AutomationProperties.Name="LUIS Key Textbox">
+                         AutomationProperties.Name="LUIS Key Textbox" TextChanged="Key_OnTextChanged">
                     </TextBox>
                     <TextBlock Grid.Row="7"
                                Grid.Column="0">
@@ -229,11 +240,22 @@
                     </TextBlock>
                     <TextBox Grid.Row="7" Grid.Column="1" Name="LUISAppId"
                          Style="{DynamicResource SettingsTextBoxStyle}"
-                         AutomationProperties.Name="LUISAppIdTextbox">
+                         AutomationProperties.Name="LUISAppIdTextbox" TextChanged="Key_OnTextChanged">
                     </TextBox>
                 </Grid>
-                <TextBlock Style="{DynamicResource SettingsTitleStyle}"
-                       Text="Insight Service Endpoints" AutomationProperties.Name="InsightServiceEndpointsSubPanel"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Style="{DynamicResource SettingsTitleStyle}" VerticalAlignment="Center"
+                           Text="Insight Service Endpoints" AutomationProperties.Name="InsightServiceEndpointsSubPanel"/>
+                    <Button Style="{DynamicResource SettingsPanelButton}"
+                            x:Name="UpdateButton"
+                            VerticalAlignment="Center"
+                            AutomationProperties.Name="SettingsPanelButton"
+                            ToolTip="{x:Static properties:Resources.UpdateKeys}"
+                            Margin="24,8,0,8"
+                            Click="UpdateAllKeys">
+                        Save
+                    </Button>
+                </StackPanel>
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
@@ -260,7 +282,7 @@
                     </TextBlock>
                     <TextBox Grid.Row="0" Grid.Column="1" Name="EntitySearchEndpoint"
                              Style="{DynamicResource SettingsTextBoxStyle}"
-                             AutomationProperties.Name="EntitySearchKeyTextbox">
+                             AutomationProperties.Name="EntitySearchKeyTextbox" TextChanged="Key_OnTextChanged">
                     </TextBox>
                     <TextBlock Grid.Row="1" Grid.Column="0">
                         <Hyperlink RequestNavigate="Open_HyperLink"
@@ -273,7 +295,7 @@
                         </TextBlock>
                     <TextBox Grid.Row="1" Grid.Column="1" Name="ImageAnalysisEndpoint"
                          Style="{DynamicResource SettingsTextBoxStyle}"
-                         AutomationProperties.Name="ImageAnalysisKeyTextbox">
+                         AutomationProperties.Name="ImageAnalysisKeyTextbox" TextChanged="Key_OnTextChanged">
                     </TextBox>
                     <TextBlock Grid.Row="2"
                                Grid.Column="0">
@@ -289,7 +311,7 @@
                              Grid.Column="1"
                              Name="ImageSearchEndpoint"
                          Style="{DynamicResource SettingsTextBoxStyle}"
-                         AutomationProperties.Name="ImageSearchKeyTextbox">
+                         AutomationProperties.Name="ImageSearchKeyTextbox" TextChanged="Key_OnTextChanged">
                     </TextBox>
                     <TextBlock Grid.Row="3"
                                Grid.Column="0">
@@ -303,7 +325,7 @@
                     </TextBlock>
                     <TextBox Grid.Row="3" Grid.Column="1" Name="TextRecognitionEndpoint"
                          Style="{DynamicResource SettingsTextBoxStyle}"
-                         AutomationProperties.Name="TextRecognitionKeyTextbox">
+                         AutomationProperties.Name="TextRecognitionKeyTextbox" TextChanged="Key_OnTextChanged">
                     </TextBox>
                     <TextBlock Grid.Row="4"
                                Grid.Column="0">
@@ -319,7 +341,7 @@
                              Grid.Column="1" 
                              Name="TranslatorEndpoint"
                          Style="{DynamicResource SettingsTextBoxStyle}"
-                         AutomationProperties.Name="TranslatorKeyTextbox">
+                         AutomationProperties.Name="TranslatorKeyTextbox" TextChanged="Key_OnTextChanged">
                     </TextBox>
                     <TextBlock Grid.Row="5"
                                Grid.Column="0">
@@ -335,7 +357,7 @@
                              Grid.Column="1"
                              Name="ContentModeratorEndpoint"
                          Style="{DynamicResource SettingsTextBoxStyle}"
-                         AutomationProperties.Name="ContentModeratorKeyTextbox">
+                         AutomationProperties.Name="ContentModeratorKeyTextbox" TextChanged="Key_OnTextChanged">
                     </TextBox>
                     <TextBlock Grid.Row="6" Grid.Column="0">
                         <Hyperlink RequestNavigate="Open_HyperLink"
@@ -350,7 +372,7 @@
                              Grid.Column="1"
                              Name="LUISKeyEndpoint"
                          Style="{DynamicResource SettingsTextBoxStyle}"
-                         AutomationProperties.Name="LUIS Key Textbox">
+                         AutomationProperties.Name="LUIS Key Textbox" TextChanged="Key_OnTextChanged">
                     </TextBox>
                     <!--<TextBlock Grid.Row="7"
                                Grid.Column="0">
@@ -368,15 +390,6 @@
                     </TextBox>-->
                 </Grid>
 
-                <Button Style="{DynamicResource SettingsPanelButton}"
-                        Grid.Row="1"
-                        Grid.Column="1"
-                        AutomationProperties.Name="SettingsPanelButton"
-                        ToolTip="{x:Static properties:Resources.UpdateKeys}"
-                        Margin="0,10,0,0"
-                        Click="UpdateAllKeys">
-                    Update
-                </Button>
             </StackPanel>
 
             <Separator Margin="15"/>

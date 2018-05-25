@@ -33,7 +33,6 @@ namespace SnipInsight.Util
             _os = string.Format("{0} ({1})", envOS, osBitness);
             _process = processBitness;
             _itInstall = itInstall;
-            _entryId = 0;
 
             const int UploadDelay = 29567;
             const int IdleThreshold = 5107;
@@ -183,7 +182,6 @@ namespace SnipInsight.Util
         private string _langName;
         private string _uploadLogFile;
         private string _sessionId;
-        private int _entryId;
         private object _lock;
         private DateTime _lastLogged;
         private LogUploader _logUploader;

@@ -123,7 +123,7 @@ namespace SnipInsight.AIServices.AIViewModels
             {
                 Process.Start(Celebrity.URL);
             }
-            catch (Win32Exception e)
+            catch (Win32Exception)
             {
                 MessageBox.Show(Resources.No_Browser);
             }
@@ -138,7 +138,7 @@ namespace SnipInsight.AIServices.AIViewModels
             {
                 Process.Start(Landmarks[0].URL);
             }
-            catch (Win32Exception e)
+            catch (Win32Exception)
             {
                 MessageBox.Show(Resources.No_Browser);
             }
@@ -153,7 +153,7 @@ namespace SnipInsight.AIServices.AIViewModels
             {
                 Process.Start(newsModel.URL);
             }
-            catch (Win32Exception e)
+            catch (Win32Exception)
             {
                 MessageBox.Show(Resources.No_Browser);
             }

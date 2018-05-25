@@ -22,8 +22,6 @@ namespace SnipInsight.Views
         /// <summary>
         /// Defines if the pen was already checked
         /// </summary>
-        private bool isPenChecked = false;
-
         public EditorSideNavigation()
         {
             InitializeComponent();

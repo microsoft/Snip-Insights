@@ -83,7 +83,7 @@ namespace SnipInsight.AIServices.AILogic
 
             try
             {
-                WebResponse response = webRequest.GetResponse();
+                WebResponse response = await webRequest.GetResponseAsync();
 
                 using (StreamReader translatedStream = new StreamReader(response.GetResponseStream(), Encoding.GetEncoding("utf-8")))
                 {
@@ -113,7 +113,7 @@ namespace SnipInsight.AIServices.AILogic
             WebRequest request = WebRequest.Create(URI);
             request.Headers.Add("Ocp-Apim-Subscription-Key", this.Key);
 
-            WebResponse response = request.GetResponse();
+            WebResponse response = await request.GetResponseAsync();
 
             using (Stream stream = response.GetResponseStream())
             {
@@ -143,7 +143,7 @@ namespace SnipInsight.AIServices.AILogic
             }
 
             // Read and parse the XML response
-            var response = request.GetResponse();
+            var response = await request.GetResponseAsync();
 
             string[] languageNames;
             using (Stream stream = response.GetResponseStream())
